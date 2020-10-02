@@ -1,0 +1,124 @@
+Asymptotic analysis overcomes the problems of naive way of analyzing algorithms.
+
+We can have three cases to analyze an algorithm: 
+1) The Worst Case 
+2) Average Case 
+3) Best Case
+
+//////////////////////////////////////////////////////////
+//Lets Take an Example of Linear Search
+
+// C implementation of the approach
+#include <stdio.h>
+
+// Linearly search x in arr[].
+// If x is present then return the index,
+// otherwise return -1
+int search(int arr[], int n, int x)
+{
+	int i;
+	for (i = 0; i < n; i++) {
+		if (arr[i] == x)
+			return i;
+	}
+	return -1;
+}
+
+/* Driver program to test above functions*/
+int main()
+{
+	int arr[] = { 1, 10, 30, 15 };
+	int x = 30;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	printf("%d is present at index %d", x,
+		search(arr, n, x));
+
+
+
+	getchar();
+	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////
+
+Worst Case Analysis (Usually Done) 
+In the worst case analysis, we calculate upper bound on running time of an algorithm. 
+We must know the case that causes maximum number of operations to be executed. 
+For Linear Search, the worst case happens when the element to be searched (x in the above code) is not present in the array. 
+When x is not present, the search() functions compares it with all the elements of arr[] one by one. 
+Therefore, the worst case time complexity of linear search would be Θ(n).
+
+Average Case Analysis (Sometimes done) 
+In average case analysis, we take all possible inputs and calculate computing time for all of the inputs. 
+Sum all the calculated values and divide the sum by total number of inputs. We must know (or predict) distribution of cases. 
+For the linear search problem, let us assume that all cases are uniformly distributed (including the case of x not being present in array). 
+So we sum all the cases and divide the sum by (n+1). Following is the value of average case time complexity. 
+
+Best Case Analysis (Bogus) 
+In the best case analysis, we calculate lower bound on running time of an algorithm. We must know the case that causes minimum number of operations to be executed. In the linear search problem, 
+the best case occurs when x is present at the first location. The number of operations in the best case is constant (not dependent on n). So time complexity in the best case would be Θ(1) 
+Most of the times, we do worst case analysis to analyze algorithms. In the worst analysis, we guarantee an upper bound on the running time of an algorithm which is good information. 
+The average case analysis is not easy to do in most of the practical cases and it is rarely done. In the average case analysis, we must know (or predict) the mathematical distribution of all possible inputs. 
+The Best Case analysis is bogus. Guaranteeing a lower bound on an algorithm doesn’t provide any information as in the worst case, an algorithm may take years to run.
+For some algorithms, all the cases are asymptotically same, i.e., there are no worst and best cases. For example, Merge Sort. Merge Sort does Θ(nLogn) operations in all cases. 
+Most of the other sorting algorithms have worst and best cases. For example, in the typical implementation of Quick Sort (where pivot is chosen as a corner element), 
+the worst occurs when the input array is already sorted and the best occur when the pivot elements always divide array in two halves. 
+For insertion sort, the worst case occurs when the array is reverse sorted and the best case occurs when the array is sorted in the same order as output.
+
+
+
+
+1) Θ Notation: The theta notation bounds a functions from above and below, so it defines exact asymptotic behavior.
+A simple way to get Theta notation of an expression is to drop low order terms and ignore leading constants. For example, consider the following expression.
+3n3 + 6n2 + 6000 = Θ(n3)
+Dropping lower order terms is always fine because there will always be a n0 after which Θ(n3) has higher values than Θn2) irrespective of the constants involved.
+For a given function g(n), we denote Θ(g(n)) is following set of functions.
+
+Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such 
+                 that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n >= n0}
+The above definition means, if f(n) is theta of g(n), then the value f(n) is always between c1*g(n) and c2*g(n) for large values of n (n >= n0). The definition of theta also requires that f(n) must be non-negative for values of n greater than n0.
+
+2) Big O Notation: The Big O notation defines an upper bound of an algorithm, it bounds a function only from above. For example, consider the case of Insertion Sort. It takes linear time in best case and quadratic time in worst case. We can safely say that the time complexity of Insertion sort is O(n^2). Note that O(n^2) also covers linear time.
+If we use Θ notation to represent time complexity of Insertion sort, we have to use two statements for best and worst cases:
+1. The worst case time complexity of Insertion Sort is Θ(n^2).
+2. The best case time complexity of Insertion Sort is Θ(n).
+
+The Big O notation is useful when we only have upper bound on time complexity of an algorithm. Many times we easily find an upper bound by simply looking at the algorithm.
+
+
+
+O(g(n)) = { f(n): there exist positive constants c and 
+                  n0 such that 0 <= f(n) <= c*g(n) for 
+                  all n >= n0}
+Omega3) Ω Notation: Just as Big O notation provides an asymptotic upper bound on a function, Ω notation provides an asymptotic lower bound.
+
+Ω Notation can be useful when we have lower bound on time complexity of an algorithm. As discussed in the previous post, the best case performance of an algorithm is generally not useful, the Omega notation is the least used notation among all three.
+
+For a given function g(n), we denote by Ω(g(n)) the set of functions.
+
+Ω (g(n)) = {f(n): there exist positive constants c and
+                  n0 such that 0 <= c*g(n) <= f(n) for
+                  all n >= n0}.
+Let us consider the same Insertion sort example here. The time complexity of Insertion Sort can be written as Ω(n), but it is not a very useful information about insertion sort, as we are generally interested in worst case and sometimes in average case.
+
+Properties of Asymptotic Notations :
+As we have gone through the definition of this three notations let’s now discuss some important properties of those notations.
+
+General Properties :
+If f(n) is O(g(n)) then a*f(n) is also O(g(n)) ; where a is a constant.
+
+Example: f(n) = 2n²+5 is O(n²)
+then 7*f(n) = 7(2n²+5)
+= 14n²+35 is also O(n²)
+
+Similarly this property satisfies for both Θ and Ω notation.
+We can say
+If f(n) is Θ(g(n)) then a*f(n) is also Θ(g(n)) ; where a is a constant.
+If f(n) is Ω (g(n)) then a*f(n) is also Ω (g(n)) ; where a is a constant.
+
+Reflexive Properties :
+If f(n) is given then f(n) is O(f(n)).
+
+Example: f(n) = n² ; O(n²) i.e O(f(n))
+
+
