@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        input{
+            bottom: 0;
+            box-sizing: border-box;
+            left: 0;
+            margin: 0;
+            opacity: 1;
+            padding-inline-start: 20px;
+            border-radius: 100px;
+            border: none;
+
+            top: 0;
+            width: 100%;
+            
+
+            -webkit-writing-mode: horizontal-tb !important;
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-appearance: textfield;
+            background-color: white;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font: 400 11px system-ui;
+            padding: 10px;
+            line-height: 21px;
+
+            box-shadow: 0px 0px 1px black;
+
+
+        }
+        input:focus{
+            border: none;
+        }
+        .idiv{
+            line-height: 21px;
+            text-align: center;
+            padding-left: 30%;
+            padding-right: 30%;
+            margin-top: 50px;
+
+        }
+
+        #fakebox-microphone {
+    background: url(mic.png) no-repeat center;
+    background-size: 24px 24px;
+    bottom: 0;
+    cursor: pointer;
+    /* margin-inline-end: 12px;
+    padding: 22px 12px 0; */
+    position: absolute;
+    right: 31%;
+    top: 36.5%;
+    width: 28px;
+    height: 50px;
+    border: none;
+}
+/* button {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+button {
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: buttonface;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 11px system-ui;
+    padding: 1px 7px 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-image: initial;
+} */
+    </style>
+</head>
+<body>
+    <div style="margin-left: 85%;font-size: 15px;font-family: Arial, Helvetica, sans-serif;">
+        <p style="word-spacing: 10px;">Gmail Images 
+            <svg style="width:20px;width:35px;" class="gb_cf" focusable="false" viewBox="0 0 40 20">
+                <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z">
+                </path></svg>
+                <a style="position: relative;top: 10px;border-radius: 100px;" class="gb_D gb_Ta gb_i" aria-label="Google Account: Arsh Sahni  
+                (arsh22sahni@gmail.com)" href="https://accounts.google.com/SignOutOptions?hl=en&amp;continue=https://www.google.com%3Fhl%3Den-US" role="button" tabindex="0" aria-expanded="false">
+                <img style="border-radius: 100%;" class="gb_Ka gbii" src="https://lh3.googleusercontent.com/ogw/ADGmqu8EKmO11bfgMEah73a_-eIlT5zCrTSo_zFK9ORG=s32-c-mo" srcset="https://lh3.googleusercontent.com/ogw/ADGmqu8EKmO11bfgMEah73a_-eIlT5zCrTSo_zFK9ORG=s32-c-mo 1x, https://lh3.googleusercontent.com/ogw/ADGmqu8EKmO11bfgMEah73a_-eIlT5zCrTSo_zFK9ORG=s64-c-mo 2x " alt="A" aria-hidden="true" data-noaft="">
+            </a>
+        </p>
+    </div>
+    <div style="text-align: center;margin-top: 100px;"><img src="https://www.google.com/logos/doodles/2016/st-patricks-day-2016-4834639321497600-hp2x.gif" width="200px"></div>
+    <div class="idiv" style="text-align: center;"><input placeholder="Search Google or type a URL" autocomplete="off" tabindex="-1" type="url" aria-hidden="true"><button id="fakebox-microphone" title="Search by voice"></button></div>
+</body>
+</html>
