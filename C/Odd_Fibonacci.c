@@ -1,4 +1,4 @@
-//C Program to print n odd numbers given by user of fibonacci numbers.
+//C Program to print n odd numbers given by user from fibonacci numbers.
 
 #include<stdio.h>
 
