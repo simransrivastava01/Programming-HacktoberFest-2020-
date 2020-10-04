@@ -1,0 +1,23 @@
+class GfG
+{
+    public static Node reverse(Node node, int k)
+    {
+        //Your code here
+        Node current=node,next=null,prev=null;
+        int count=0;
+        while(count<k && current != null)
+        {
+            count++;
+            next=current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+        
+        if(next!=null){
+            node.next=reverse(next,k);
+        }
+        
+        return prev;
+    }
+}
