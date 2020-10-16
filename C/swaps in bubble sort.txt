@@ -1,0 +1,43 @@
+/*Find the number of swaps in Bubble Sort
+
+What this code do:Given a list of integers with no duplicates, find out
+how many swaps it will take to sort the list in increasing order using Bubble sort.
+
+Input:First line of each test case will contain an integer T = number of test cases. Each
+test case will contain two lines. First line will contain a number N = no. of elements 
+in the list. Next line will contain N space separated numbers. 1 <= N <= 50.
+
+Output:Prints the number of swaps required to sort the list in increasing order using 
+Bubble sort.
+*/
+#include <stdio.h>
+int main()
+{int t,n,i,d,temp,j,ct=0;
+ scanf("%d",&t);
+ for(d=0;d<t;d++)
+ {
+   ct=0;
+   scanf("%d",&n);
+   int a[n];
+  for(i=0;i<n;i++)
+  {
+    scanf("%d",&a[i]);
+  }
+  for(i=0;i<n-1;i++)
+  {
+    for(j=0;j<n-i-1;j++)
+    {
+      if(a[j]>a[j+1])
+      {
+        temp=a[j];
+        a[j]=a[j+1];
+        a[j+1]=temp;
+        ct++;
+      }
+    }
+  }
+   printf("%d\n",ct);
+ }
+    return 0;
+}
+
