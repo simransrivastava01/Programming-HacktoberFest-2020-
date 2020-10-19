@@ -1,0 +1,29 @@
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main
+{
+  public static void main(String[] args)
+  {
+    String id;
+    Scanner s1=new Scanner(System.in);
+    id=s1.nextLine();
+    try{
+      if(id.indexOf('@')==-1)
+        throw new
+        ArithmeticException("Invalid");
+      else if(id.indexOf('.')==-1)
+        throw new
+        ArithmeticException("Invalid");
+      if(id.indexOf('.')<id.indexOf('@'))
+        throw new
+        ArithmeticException("Invalid");
+      else
+        System.out.println("Valid");
+    }
+    catch(ArithmeticException i){
+     System.out.println(i.getMessage());
+      
+    }
+  }
+}
