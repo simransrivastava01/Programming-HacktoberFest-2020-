@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{int n,num=0,d=0,number=0;
+ scanf("%d",&n);
+ while(n>0)
+ {
+   d=n%10;
+   num=num*10+d;
+   n/=10;
+ }
+ while(num>0)
+ {d=num%10;
+  d=d+1;
+  d=d%10;
+  number=number*10+d;
+   num/=10;
+ }
+ printf("%d",number);
+
+    return 0;
+}
